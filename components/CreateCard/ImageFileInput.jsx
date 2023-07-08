@@ -39,7 +39,7 @@ const ImageFileInput = ({ className = '', initialPreview, name, value, onChange 
           type='button'
           onClick={handleClearClick}
         >
-
+          X
         </button>
       )}
     </div>
