@@ -94,7 +94,7 @@ const CreateCardForm = ({
       </div>
       <div className='flex'>
         <button>미리보기</button>
-        <button>취소</button>
+        <button>초기화</button>
       </div>
     </form>
   )

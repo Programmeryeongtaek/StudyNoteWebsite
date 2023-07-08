@@ -1,14 +1,17 @@
 import React from 'react';
-
+import CardNewsList from '@/components/CardNewsList';
+import Link from 'next/link';
 const CardNews = () => {
   return (
     <div>
       <div>
-        <button>카드 생성</button>
+        <Link href={'/CreateCardNews'}>
+          <button>카드 생성</button>
+        </Link>
       </div>
       <hr />
       <div>
-        카드보기
+        <CardNewsList />
       </div>
     </div>
   )

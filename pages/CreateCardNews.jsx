@@ -16,7 +16,7 @@ const CreateCardNews = () => {
           미리보기
         </div>
         <div className='border-black' >
-          <button className='border-4'>작성하기</button>
+          <button className='border-4'>만들기</button>
           <button className='border-4'>취소</button>
         </div>
       </div>
