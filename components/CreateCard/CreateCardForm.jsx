@@ -69,32 +69,28 @@ const CreateCardForm = ({
   }
 
   return (
-    <form className='border-black' onSubmit={handleSubmit}>
+    <form className='flex max-h-[250px]' onSubmit={handleSubmit}>
       <ImageFileInput
-        className="Image-preview"
+        className="flex-none mr-[20px]"
         name="imgFile"
         initialPreview={initialPreview}
         value={values.imgFile}
         onChange={handleChange}
       />
-      <div>
-        <div>
-          <input name='title' value={values.title} placeholder='제목을 입력하세요.' type="text" onChange={handleInputChange} />
-          <input name='athor' value={values.athor} placeholder='작가 이름' type="text" onChange={handleInputChange} />
-          <input name='page' value={values.page} placeholder='페이지 표시' type="number" onChange={handleInputChange} />
-          <input name='content' value={values.content} placeholder='내용 입력' type="number" onChange={handleInputChange} />
-          <input name='date' value={values.date} placeholder='날짜 기입' type="number" onChange={handleInputChange} />
+      <div className='flex flex-col'>
+        <div className='flex mb-[14px]'>
+          <input className='flex-[2_1]' name='title' value={values.title} placeholder='제목을 입력하세요.' type="text" onChange={handleInputChange} />
           {onCancel && (
-            <button type='button' onClick={onCancel} >취소</button>
+            <button className='py-[13px] px-[20px] rounded-[6px] font-normal border-none text-black bg-transparent text-[16px] cursor-pointer' type='button' onClick={onCancel}>취소</button>
           )}
-          <button type='submit' disabled={isSubmitting}>확인</button>
+          <button className='py-[13px] px-[20px] rounded-[6px] font-normal border-none text-white bg-[#2c9631] text-[16px] cursor-pointer' type='submit' disabled={isSubmitting}>확인</button>
         </div>
-        <textarea name="content" value={values.content} placeholder='내용을 작성해 주세요.' onChange={handleInputChange}></textarea>
+        <div className='flex mb-[14px]'>
+          <input className='' name='athor' value={values.athor} placeholder='작가 이름' type="text" onChange={handleInputChange} />
+          <input className='' name='page' value={values.page} placeholder='페이지 표시' type="number" onChange={handleInputChange} />
+        </div>
+        <textarea className='flex-1' name="content" value={values.content} placeholder='내용을 작성해 주세요.' onChange={handleInputChange}></textarea>
         {submittingError && <p>{submittingError.message}</p>}
-      </div>
-      <div className='flex'>
-        <button>미리보기</button>
-        <button>초기화</button>
       </div>
     </form>
   )
